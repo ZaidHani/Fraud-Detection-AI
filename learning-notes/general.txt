@@ -1,0 +1,11 @@
+the wait-for-it.sh file is copied from github, it's used wait for the port to be availabe...
+
+you see the service "mc" in the docker compose file? we are using the wait-for-it code to wait for the port to be availabe and execute the rest of the code...
+
+if you wanted to change the script location, you'll probably need to readjust the volume's path of the wait-for-it.sh
+
+this is the commmand used to run the docker compose file:
+docker compose --profile flower up -d --build
+--profile		Specify a profile to enable (flower profile)
+--build		Build images before starting containers
+-d, --detach		Detached mode: Run containers in the background

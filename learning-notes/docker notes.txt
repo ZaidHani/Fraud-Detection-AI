@@ -43,3 +43,7 @@ Your Docker Compose = Your ML Platform
 └── ML Services
     ├── mlflow (experiment tracking)
     └── jupyter (development)
+
+
+
+adding a dash before something or not in the yaml file is the same.
