@@ -1,0 +1,45 @@
+Image = A pre-packaged, ready-to-run snapshot of an application
+
+    Think of it like a frozen pizza - ready to use immediately
+    Contains the OS, code, dependencies, everything needed to run
+    Stored in registries (like Docker Hub)
+
+Build = The process of creating an image from instructions (Dockerfile)
+
+    Think of it like making pizza from scratch using a recipe
+    Takes source code + Dockerfile and produces an image
+    Takes time but gives you full control
+
+
+mind blowing thing:
+this docker compose file in the src dir, is not just for airflow.
+airflow is just another service in the YAML file...
+
+this yaml file is an end-to-end network to run airflow... 
+
+you can use the image to do other stuff not just airflow.
+
+
+## Airflow Is Actually MULTIPLE Services
+
+Airflow typically runs as **3-4 separate containers**:
+
+**1. airflow-webserver** - The UI (port 8080)
+**2. airflow-scheduler** - Decides when to run tasks
+**3. airflow-worker** - Actually executes tasks
+**4. airflow-triggerer** (optional) - Handles deferrable operators
+
+They all use the **same image** (`airflow-training:latest`), but run different commands.
+
+Your Docker Compose = Your ML Platform
+├── Infrastructure Services
+│   ├── postgres (database)
+│   ├── redis (message queue)
+│   └── minio (object storage)
+├── Airflow Services (orchestration)
+│   ├── airflow-webserver
+│   ├── airflow-scheduler
+│   └── airflow-worker
+└── ML Services
+    ├── mlflow (experiment tracking)
+    └── jupyter (development)
