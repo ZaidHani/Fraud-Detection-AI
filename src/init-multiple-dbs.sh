@@ -5,3 +5,11 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     CREATE DATABASE mlflow;
     GRANT ALL PRIVILEGES ON DATABASE mlflow TO mlflow;
 EOSQL
+
+# Connect to the mlflow database and grant schema permissions
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "mlflow" <<-EOSQL
+    GRANT ALL ON SCHEMA public TO mlflow;
+    GRANT CREATE ON SCHEMA public TO mlflow;
+    ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO mlflow;
+    ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO mlflow;
+EOSQL

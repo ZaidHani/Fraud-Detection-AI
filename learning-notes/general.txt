@@ -9,3 +9,11 @@ docker compose --profile flower up -d --build
 --profile		Specify a profile to enable (flower profile)
 --build		Build images before starting containers
 -d, --detach		Detached mode: Run containers in the background
+
+
+you need to enable multiple dbs for the postgres.
+you'll have to add another volume for the postgres service
+and you need to run certain commands in a file to make postgres accept mlflow, in my case I've created a file called init-multiple-dbs.sh
+you'll also have to change it's permissions to make it executable, by using this command:
+chmod +x init-multiple-dbs.sh
+however, this won't work in windows.
