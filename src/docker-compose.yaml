@@ -341,7 +341,15 @@ services:
 
   flower:
     <<: *airflow-common
-    command: airflow celery flower
+    # option 1
+    # command: celery flower
+    # option 2 worked
+    command: bash -c "celery -A airflow.providers.celery.executors.celery_executor.app flower --port=5555"
+    # option 3
+    # entrypoint: []
+    # command: celery -A airflow.providers.celery.executors.celery_executor.app flower
+    # option 4
+    # command: celery -A airflow.providers.celery.executors.celery_executor.app flower
     profiles:
       - flower
     ports:

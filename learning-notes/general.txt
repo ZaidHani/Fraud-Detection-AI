@@ -17,3 +17,4 @@ and you need to run certain commands in a file to make postgres accept mlflow, i
 you'll also have to change it's permissions to make it executable, by using this command:
 chmod +x init-multiple-dbs.sh
 however, this won't work in windows.
+

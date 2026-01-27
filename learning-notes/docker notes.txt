@@ -47,3 +47,11 @@ Your Docker Compose = Your ML Platform
 
 
 adding a dash before something or not in the yaml file is the same.
+
+you need to understand that the airflow image has requirements other than the stuff you have in the requirements.txt file.
+so, you need to add the requirements to the requirements.txt file. this means that these requirements already exist in the image:
+    apache-airflow-providers-celery
+    apache-airflow-providers-redis
+    redis
+    flower
+

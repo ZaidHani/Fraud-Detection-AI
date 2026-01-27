@@ -12,3 +12,13 @@ scikit-learn
 boto3
 tqdm
 tqdm-joblib
+
+# Airflow Celery support for Airflow 3.x
+apache-airflow-providers-celery
+
+# Redis support (since you're using Redis as broker)
+apache-airflow-providers-redis
+
+# Optional but useful for Celery/Flower
+redis
+flower
