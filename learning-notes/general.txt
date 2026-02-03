@@ -18,3 +18,5 @@ you'll also have to change it's permissions to make it executable, by using this
 chmod +x init-multiple-dbs.sh
 however, this won't work in windows.
 
+lots of times, when you create an sh file, it will not work due to permission issues. so you'll have to run this command:
+chmod +x filename.sh to make it executable.

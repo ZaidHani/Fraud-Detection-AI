@@ -426,7 +426,6 @@ volumes:
   postgres-db-volume:
   minio-data:
 
-
 networks:
   fraud-detection:
     driver: bridge
