@@ -74,6 +74,7 @@ class TransactionProducer:
             self.topic,
             key=str(transaction['transaction_id']),
             value=json.dumps(transaction),
+            callback=self.delivery_report
         )
 
 
